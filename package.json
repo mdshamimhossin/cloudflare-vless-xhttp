@@ -1,0 +1,16 @@
+
+{
+  "name": "cloudflare-vless-xhttp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@cloudflare/containers": "latest"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.0"
+  }
+}
