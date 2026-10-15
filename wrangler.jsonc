@@ -1,0 +1,29 @@
+
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cloudflare-vless-xhttp",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-15",
+  "containers": [
+    {
+      "class_name": "XrayContainer",
+      "image": "./Dockerfile",
+      "max_instances": 1,
+      "instance_type": "basic"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "XRAY_CONTAINER",
+        "class_name": "XrayContainer"
+      }
+    ]
+  },
+  "exports": {
+    "XrayContainer": {
+      "type": "durable-object",
+      "storage": "sqlite"
+    }
+  }
+}
